@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板演示</title>
+    {% load  filters %}
+</head>
+<body>
+<h1>模板演示</h1>
+{% if users.amei.age ==  28 %}
+    等于28
+{% else %}
+    不等于28
+{% endif %}
+姓名：{{ users.aliang }}<br>
+年龄：{{ users.property.age }}<br>
+性别：{{ users.property.sex }}<br>
+当前登录的用户：{{ username }}
+<br>
+{{ 666 | func }}
+<br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>用户名</th>
+            <th>名称</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+    </thead>
+    <thead>
+    <br><br>
+        {% for username, pr in users.items %}
+        <tr>
+            {% if forloop.first %}
+                当前第一个循环
+                {% else %}
+                不是第一个循环
+                {% endif %}
+            {{ forloop.first}}
+            <td>{{ forloop.revcounter }}</td>
+            <td>{{ username | cut:"a" }}</td>
+            <td>{{ pr.name }}</td>
+            <td>{{ pr.age }}</td>
+            <td>{{ pr.sex }}</td>
+        </tr>
+    {% endfor %}
+    </thead>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}关于我们{% endblock %}
+{% load static %}
+{% block style %}
+{#    <link rel="stylesheet" href="/static/main.css">#}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+{% endblock %}
+{% block context %}
+    这是关于我们
+{% include 'hello.html' %}
+
+<div class="test">
+    这是引用的外部css
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件列表</title>
+</head>
+<body>
+{% for filename in file_list %}
+    <a href="{% url 'download' filename %}">{{ filename }}</a><br>
+{% endfor %}
+</body>
+</html>

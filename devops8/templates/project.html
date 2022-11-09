@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目列表</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>项目名称</th>
+        <th>项目列表</th>
+    </tr>
+    {% for i in project_list %}
+    <tr>
+        <td>{{ i }}</td>
+        <td>
+            {% for k in i.app_set.all %}
+            {{ k }}
+            {% endfor %}
+        </td>
+
+    </tr>
+    {% endfor %}
+    </thead>
+</table>
+{{ app_list }}
+</body>
+</html>

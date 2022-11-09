@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务器列表</title>
+</head>
+<body>
+{{ app_list }}
+<table border="1">
+    <thead>
+    <tr>
+        <th>应用名称</th>
+        <th>所属项目</th>
+        <th>服务器列表</th>
+    </tr>
+    {% for i in app_list %}
+    <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.project.name }}</td>
+        <td>{% for k in i.server_set.all %}
+            {{ k }}
+            {% endfor %}
+            </td>
+
+    </tr>
+    {% endfor %}
+    </thead>
+</table>
+
+</body>
+</html>

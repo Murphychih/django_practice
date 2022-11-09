@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加应用</title>
+</head>
+<body>
+
+<form action="", method="post">
+      应用名称:  <input type="text" name="app-name">
+      应用描述： <input type="text" name="app-describe">
+      所属项目:
+    <select name="project-name" id="">
+
+        {% for i in project_list %}
+        <option value={{ i }}>{{ i }}</option>
+        {% endfor %}
+    </select>
+    服务器列表:
+    <select name="server-list" id="" multiple>
+
+        {% for i in server_list %}
+        <option value={{ i }}>{{ i }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>

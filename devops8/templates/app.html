@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>应用列表</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>应用ID</th>
+        <th>应用名称</th>
+        <th>应用描述</th>
+        <th>所属项目ID</th>
+        <th>所属项目名称</th>
+    </tr>
+    {% for i in app_list %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.describe }}</td>
+        <td>{{ i.project.id }}</td>
+        <td>{{ i.project.name }}</td>
+    </tr>
+    {% endfor %}
+    </thead>
+</table>
+{{ app_list }}
+</body>
+</html>
